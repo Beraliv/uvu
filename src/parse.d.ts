@@ -1,4 +1,4 @@
-type Arrayable<T> = T[] | T;
+import {ArrayOrSingle} from 'ts-essentials';
 
 export interface Suite {
 	/** The relative file path */
@@ -9,8 +9,8 @@ export interface Suite {
 
 export interface Options {
 	cwd: string;
-	require: Arrayable<string>;
-	ignore: Arrayable<string | RegExp>;
+	require: ArrayOrSingle<string>;
+	ignore: ArrayOrSingle<string | RegExp>;
 }
 
 export interface Argv {
