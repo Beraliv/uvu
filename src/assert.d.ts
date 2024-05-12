@@ -1,9 +1,11 @@
 type Types = 'string' | 'number' | 'boolean' | 'object' | 'undefined' | 'function';
 
 export type Message = string | Error;
-export function ok(actual: unknown, msg?: Message): asserts actual;
-export function is<Actual, Expects extends Actual>(actual: Actual, expects: Expects, msg?: Message): void;
-export function equal(actual: any, expects: any, msg?: Message): void;
+export function ok(actual: any, msg?: Message): asserts actual;
+export function is<Actual, Expected extends Actual>(actual: Actual, expected: Expected, msg?: Message): void;
+export function equal<Actual, Expected extends Actual>(actual: Actual, expected: Expected, msg?: Message): void;
+export function equal<Actual extends Expected, Expected>(actual: Actual, expected: Expected, msg?: Message): void;
+export function equal<Actual, Expects>(actual: Actual, expected: Expects, msg?: Message): void;
 export function type(actual: any, expects: Types, msg?: Message): void;
 export function instance(actual: any, expects: any, msg?: Message): void;
 export function snapshot(actual: string, expects: string, msg?: Message): void;
