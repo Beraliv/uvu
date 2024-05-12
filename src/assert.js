@@ -1,4 +1,4 @@
-import { dequal } from 'dequal';
+import { dequal } from 'dequal';
 import { compare, lines } from 'uvu/diff';
 
 function dedent(str) {
